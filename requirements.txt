@@ -1,0 +1,10 @@
+chromadb
+requests
+fastapi
+uvicorn
+pydantic
+torch
+sentence_transformers 
+mistralai
+python-dotenv
+streamlit 

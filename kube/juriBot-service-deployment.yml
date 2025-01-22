@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: juribot-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: juribot-api
+  template:
+    metadata:
+      labels:
+        app: juribot-api
+    spec:
+      containers:
+      - name: juribot-api
+        image: mchianale/juribot-api:latest
+        ports:
+        - containerPort: 8002
+     
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: juribot-api
+spec:
+  selector:
+    app: juribot-api
+  ports:
+    - protocol: TCP
+      port: 8002
+      targetPort: 8002
+  type: ClusterIP

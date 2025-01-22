@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vector-similarity-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vector-similarity-api
+  template:
+    metadata:
+      labels:
+        app: vector-similarity-api
+    spec:
+      containers:
+      - name: vector-similarity-api
+        image: mchianale/vector-similarity-api:latest
+        ports:
+        - containerPort: 8001
+     
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vector-similarity-api
+spec:
+  selector:
+    app: vector-similarity-api
+  ports:
+    - protocol: TCP
+      port: 8001
+      targetPort: 8001
+  type: ClusterIP

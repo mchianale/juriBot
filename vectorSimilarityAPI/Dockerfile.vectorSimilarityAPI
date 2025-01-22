@@ -1,0 +1,15 @@
+# Use Python 3.10 slim image
+FROM python:3.10-slim
+
+# Set the working directory inside the container
+WORKDIR /code
+
+# Copy the requirements file and install dependencies
+COPY ./vectorSimilarityAPI/requirements.txt /code/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+# Copy the rest of the application code
+COPY ./vectorSimilarityAPI /code/vectorSimilarityAPI
+
+# Command to run the FastAPI app
+CMD ["uvicorn", "vectorSimilarityAPI.main:app", "--host", "0.0.0.0", "--port", "8001"]

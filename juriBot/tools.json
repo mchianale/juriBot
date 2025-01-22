@@ -1,0 +1,21 @@
+{
+        "tools" : [
+        {
+            "type": "function",
+            "function": {
+                "name": "queryInformationsBySimilarity",
+                "description": "Recherche et retourne les articles de code en vigueur les plus pertinents en fonction de la requête formulée. Cet outil permet d’identifier les dispositions légales du code de l'éducation les plus adaptées pour répondre précisément à la question posée.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "query": {
+                            "type": "string",
+                            "description": "La requête d'utilisateur ou adaptée par l'agent en fonction du contexte et de l'historique de messages."
+                        }
+                    },
+                    "required": ["query"]
+                }
+            }
+        }
+    ]
+}

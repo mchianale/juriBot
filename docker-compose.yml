@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  encoder-api:
+    build:
+      context: .  # Use the current directory as the build context
+      dockerfile: encoderAPI/Dockerfile.encoderAPI  # Specify the Dockerfile location
+    ports:
+      - "8000:8000"  # Map the container port to the host port
+  vector-similarity-api:
+    build:
+      context: .  # Use the current directory as the build context
+      dockerfile: vectorSimilarityAPI/Dockerfile.vectorSimilarityAPI  # Specify the Dockerfile location
+    volumes:
+      - ./vectorSimilarityAPI/data:/code/vectorSimilarityAPI/data  # Bind the data folder on the host to the container
+    ports:
+      - "8001:8001"  # Map the container port to the host port
+    depends_on:
+      - encoder-api
+  juribot-api:
+    build:
+      context: .  # Use the current directory as the build context
+      dockerfile: juriBot/Dockerfile.juriBot  # Specify the Dockerfile location
+    ports:
+      - "8002:8002"  # Map the container port to the host port
+    depends_on:
+      - vector-similarity-api
