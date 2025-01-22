@@ -2,6 +2,32 @@
 
 Ce projet vise à créer un **Agent RAG** (Retrieval-Augmented Generation) pour le droit français, spécifiquement pour le **Code de l'Éducation**. L'objectif est de développer un agent conversationnel capable de répondre à des questions sur les articles en vigueur du Code de l'Éducation, en accédant directement aux textes officiels sur [Légifrance](https://www.legifrance.gouv.fr).
 
+## Sommaire
+
+- [Introduction](#introduction)
+  - [EncoderAPI](#introduction)
+  - [ChromaAPI](#introduction)
+  - [JuriBot API](#introduction)
+- [Fonctionnalités](#fonctionnalités)
+- [Prérequis](#prérequis)
+- [Installation](#installation)
+  - [Clonage du Dépôt](#clonez-ce-dépôt)
+  - [Création de la Clé Mistral](#creer-la-clé-mistral)
+  - [Installation des Dépendances](#installez-les-dépendances)
+  - [Utilisation avec Docker Compose](#uilisation-rapide-avec-docker-compose)
+  - [Lancement de Streamlit](#lancer-streamlit)
+- [Documentation et Accès](#documentation-et-accès)
+- [Données](#les-données)
+  - [LegiFrance](#legifrance)
+  - [Chroma DB](#chroma-db---vector-database)
+- [Kubernetes](#kubernetes)
+  - [Build et Push des Images Docker](#build-and-push-services-images-vers-dockerhub)
+  - [Déploiement Kubernetes](#deploiement-avec-kubernetes)
+  - [Exécution Locale avec Kubernetes](#tourner-en-local-avec-kubernetes)
+
+---
+
+## Introduction
 **Le projet se compose de trois services principaux :**
 
 1. **EncoderAPI** :
@@ -19,32 +45,6 @@ Ce projet vise à créer un **Agent RAG** (Retrieval-Augmented Generation) pour 
    - Fournit un point d’API pour interagir avec JuriBot (gère également l’historique des messages).
 
 Une démonstration de l'agent conversationnel est disponible via **Streamlit** (en local), permettant aux utilisateurs de tester l'agent avec une interface.
-    
----
-
-## Sommaire
-
-- [Introduction](#introduction)
-- [Services Principaux](#services-principaux)
-  - [EncoderAPI](#encoderapi)
-  - [ChromaAPI](#chromaapi)
-  - [JuriBot API](#juribot-api)
-- [Fonctionnalités](#fonctionnalités)
-- [Prérequis](#prérequis)
-- [Installation](#installation)
-  - [Clonage du Dépôt](#clonez-ce-dépôt)
-  - [Création de la Clé Mistral](#creer-la-clé-mistral)
-  - [Installation des Dépendances](#installez-les-dépendances)
-  - [Utilisation avec Docker Compose](#uilisation-rapide-avec-docker-compose)
-  - [Lancement de Streamlit](#lancer-streamlit)
-- [Documentation et Accès](#documentation-et-accès)
-- [Données](#les-données)
-  - [LegiFrance](#legifrance)
-  - [Chroma DB](#chroma-db---vector-database)
-- [Kubernetes](#kubernetes)
-  - [Build et Push des Images Docker](#build-and-push-services-images-vers-dockerhub)
-  - [Déploiement Kubernetes](#deploiement-avec-kubernetes)
-  - [Exécution Locale avec Kubernetes](#tourner-en-local-avec-kubernetes)
     
 ---
 
