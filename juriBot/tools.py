@@ -13,8 +13,8 @@ def queryInformationsBySimilarity(n_results : int, query : str):
             response_json = response.json().get('results')
 
             # Extract documents and metadata from the response
-            documents = response_json.get('documents', [])
-            metadatas = response_json.get('metadatas', [])
+            documents = response_json.get('documents', [])[0]
+            metadatas = response_json.get('metadatas', [])[0]
 
             # Prepare the results
             results = []
@@ -28,3 +28,5 @@ def queryInformationsBySimilarity(n_results : int, query : str):
         else:
             # If the response is not successful, return the error content
             return f"error: {response.status_code}, message: {response.text}"
+        
+
