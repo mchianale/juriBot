@@ -9,8 +9,8 @@ Ce projet vise à créer un **Agent RAG** (Retrieval-Augmented Generation) pour 
   - [ChromaAPI](#introduction)
   - [JuriBot API](#introduction)
 - [Fonctionnalités](#fonctionnalités)
-- [Prérequis](#prérequis)
 - [Installation](#installation)
+  - [Prérequis](#prérequis)
   - [Clonage du Dépôt](#clonez-ce-dépôt)
   - [Création de la Clé Mistral](#creer-la-clé-mistral)
   - [Installation des Dépendances](#installez-les-dépendances)
@@ -56,27 +56,25 @@ Une démonstration de l'agent conversationnel est disponible via **Streamlit** (
 
 ---
 
-## Prerequis 
+## Installation
+### Prérequis 
 - python >= `3.10`
 - une clé mistral API
 - Docker
-
----
-
-## Installation
+  
 ### Clonez ce dépôt : 
 ```bash
 git clone https://github.com/your-username/nom-du-repository.git
 ```
 
-### Creer la clé Mistral
+### Créer la clé Mistral
 ```bash
 cd juriBot
 touch .env
 echo "MISTRAL_API_KEY=your-api-key-here" >> .env
 ```
 
-### Installez les dépendances : 
+### Installez les dépendances
 ```bash
 pip install -r requirements.txt
 ```
