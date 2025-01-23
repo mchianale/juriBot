@@ -39,8 +39,9 @@ Ce projet vise à créer un **Agent RAG** (**Retrieval-Augmented Generation**) p
    - Gère la base de données vectorielle (ajout, modification, suppression de documents).
    - Traite les requêtes pour obtenir **les top_k voisins les plus proches**.
    - Fait appel à EncoderAPI pour obtenir les embeddings des textes.
+   - Voir [documentation](https://github.com/mchianale/juribot/main/vectorSimilarityAPI/README.md
 
-3. **JuriBot API** :
+4. **JuriBot API** :
    - Crée un agent (suivant la documentation de `Mistral`) utilisant un LLM pour répondre aux requêtes des utilisateurs, mais également pour gérer des outils.
    - Utilise un System Prompt pour rendre les réponses du LLM plus pertinentes.
    - Ici, un seul outil est utilisé : il consiste à récupérer les top_k voisins les plus proches d’une requête utilisateur (que le LLM peut adapter).
@@ -70,7 +71,7 @@ Une démonstration de l'agent conversationnel est disponible via `Streamlit` (en
 
 ## Réutilisation
 - Projet réutilisable avec `docker-compose` ou `kubernetes`.
-- **Voir [les instructions](https://github.com/mchianale/juribot/edit/main/RUN.md)**  
+- **Voir [les instructions](https://github.com/mchianale/juribot/main/RUN.md)**  
 
 ---
 
