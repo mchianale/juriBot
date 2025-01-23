@@ -24,7 +24,7 @@ Ce projet vise à créer un **Agent RAG** (**Retrieval-Augmented Generation**) p
   - [Chroma DB](#chroma-db---vector-database)
 - [Réutilisation](#réutilisation)
 - [Exemple](#exemple)
-- [Axe d’amélioration](#axe-d’amélioration)
+- [Axe d’amélioration](#axe-damélioration)
 - [Source](#source)
 
 ---
