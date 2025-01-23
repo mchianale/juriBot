@@ -23,6 +23,7 @@ Ce projet vise à créer un **Agent RAG** (**Retrieval-Augmented Generation**) p
   - [LegiFrance](#legifrance)
   - [Chroma DB](#chroma-db---vector-database)
 - [Réutilisation](#réutilisation)
+- [Exemple](#exemple)
 - [Source](#source)
 
 ---
