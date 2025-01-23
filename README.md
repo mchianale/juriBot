@@ -27,7 +27,7 @@ Ce projet vise à créer un **Agent RAG** (**Retrieval-Augmented Generation**) p
   
 ---
 
-[![GitHub Logo](https://github.com/mchianale/loan_request_application/blob/main/docs/play.png)](https://youtu.be/JTdvEErmetI)
+[![GitHub Logo](https://github.com/mchianale/juribot/blob/main/img/screen_exemple.png)](https://github.com/mchianale/juribot/blob/main/img/juriBot_exemple_conversation.pdf)
 
 ---
 
