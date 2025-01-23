@@ -52,13 +52,6 @@ streamlit run streamLitFront/app.py
 
 ---
 
-## Documentation et accès 
-- **encoderAPI** : [http://localhost:8000/docs](http://localhost:8000/docs)
-- **vectorSimilarityAPI** : [http://localhost:8001/docs](http://localhost:8001/docs)
-- **juriBot** : [http://localhost:8002/docs](http://localhost:8002/docs)
-
----
-
 # Kubernetes 
 ## Build and Push Services Images vers DockerHub
 ```bash
