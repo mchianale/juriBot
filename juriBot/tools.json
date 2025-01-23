@@ -10,7 +10,7 @@
                     "properties": {
                         "query": {
                             "type": "string",
-                            "description": "La requête d'utilisateur ou adaptée par l'agent en fonction du contexte et de l'historique de messages."
+                            "description": "Si la demande utilisateur dépend du contexte de l'historique de message, elle peut être adaptée par l'agent, sinon c'est la requête utilisateur mais sans modification (hormis gestion des erreurs d'orthographe)."
                         }
                     },
                     "required": ["query"]

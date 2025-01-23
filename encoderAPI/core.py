@@ -13,7 +13,7 @@ class EncoderClient:
         # setup model
         model_name =  model_config['model_name']
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        self._model = SentenceTransformer(model_name)
+        self._model = SentenceTransformer(model_name, trust_remote_code=model_config["trust_remote_code"],)
         self._model.to(self.device)
         logging.info(f"EncoderClient --load embedding model {model_name}, running on {self.device}")
 

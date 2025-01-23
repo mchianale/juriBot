@@ -11,7 +11,6 @@ def queryInformationsBySimilarity(n_results : int, query : str):
         if response.status_code == 200:
             # Decode the response content as JSON
             response_json = response.json().get('results')
-
             # Extract documents and metadata from the response
             documents = response_json.get('documents', [])[0]
             metadatas = response_json.get('metadatas', [])[0]
@@ -29,4 +28,3 @@ def queryInformationsBySimilarity(n_results : int, query : str):
             # If the response is not successful, return the error content
             return f"error: {response.status_code}, message: {response.text}"
         
-
