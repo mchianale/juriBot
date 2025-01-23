@@ -24,6 +24,7 @@ Ce projet vise à créer un **Agent RAG** (**Retrieval-Augmented Generation**) p
   - [Chroma DB](#chroma-db---vector-database)
 - [Réutilisation](#réutilisation)
 - [Exemple](#exemple)
+- [Axe d’amélioration](#axe-d’amélioration)
 - [Source](#source)
 
 ---
@@ -84,6 +85,20 @@ Une démonstration de l'agent conversationnel est disponible via `Streamlit` (en
 
 [**voir une conversation**](https://github.com/mchianale/juribot/blob/main/img/juriBot_exemple_conversation.pdf)
 
+---
+
+## Axe d’amélioration
+
+**Les données**:
+  - Récupération et intégration de tous les textes en vigueur sur LegiFrance = (1 700 000 de documents comprenant les articles mais aussi décrets, ordonnances   etc...).
+  - Intégration à la bd vectorielle.
+  - Création d’un graphe de connaissance (Neo4j) pour avoir les relations entre les documents.
+  - Évaluation du système de requête par similarité.
+
+**L’Agent**:
+  - Ajout du mode stream.
+  - Évaluation des réponses.
+  - 
 ---
 
 ## Source
