@@ -2,36 +2,36 @@
 
 Ce projet vise à créer un **Agent RAG** (Retrieval-Augmented Generation) pour le droit français, spécifiquement pour le **Code de l'Éducation**. L'objectif est de développer un agent conversationnel capable de répondre à des questions sur les articles en vigueur du Code de l'Éducation, en accédant directement aux textes officiels sur [Légifrance](https://www.legifrance.gouv.fr).
 
+## Powered by
+
+<p align="center">
+  <img src="https://img.shields.io/badge/-Mistral%20AI-blue?style=for-the-badge&logo=swift&logoColor=white" alt="Mistral AI" />
+  <img src="https://img.shields.io/badge/-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/-ChromaDb-5E17EB?style=for-the-badge&logo=code&logoColor=white" alt="ChromaDb" />
+  <img src="https://img.shields.io/badge/-HuggingFace-FFAE42?style=for-the-badge&logo=huggingface&logoColor=white" alt="HuggingFace" />
+</p>
+
+---
+
 ## Sommaire
 
 - [Introduction](#introduction)
   - [EncoderAPI](#introduction)
   - [ChromaAPI](#introduction)
   - [JuriBot API](#introduction)
-- [Fonctionnalités](#fonctionnalités)
-- [Installation](#installation)
-  - [Prérequis](#prérequis)
-  - [Clonage du Dépôt](#clonez-ce-dépôt)
-  - [Création de la Clé Mistral](#creer-la-clé-mistral)
-  - [Installation des Dépendances](#installez-les-dépendances)
-  - [Utilisation avec Docker Compose](#uilisation-rapide-avec-docker-compose)
-  - [Lancement de Streamlit](#lancer-streamlit)
-- [Documentation et Accès](#documentation-et-accès)
 - [Données](#les-données)
   - [LegiFrance](#legifrance)
   - [Chroma DB](#chroma-db---vector-database)
-- [Kubernetes](#kubernetes)
-  - [Build et Push des Images Docker](#build-and-push-services-images-vers-dockerhub)
-  - [Déploiement Kubernetes](#deploiement-avec-kubernetes)
-  - [Exécution Locale avec Kubernetes](#tourner-en-local-avec-kubernetes)
 
 ---
 
 ## Introduction
+![architecture](https://github.com/mchianale/juribot/blob/main/img/architecture.pdf)
+
 **Le projet se compose de trois services principaux :**
 
 1. **EncoderAPI** :
-   - Utilisation de **sentence-transformers** avec le modèle `paraphrase-multilingual-mpnet-base-v2` pour transformer les articles du Code de l'Éducation en embeddings, facilitant ainsi leur comparaison par similarité.
+   - Utilisation de **sentence-transformers** avec le modèle `dangvantuan/french-document-embedding` pour transformer les articles du Code de l'Éducation en embeddings, facilitant ainsi leur comparaison par similarité.
 
 2. **ChromaAPI** :
    - Gère la base de données vectorielle (ajout, modification, suppression de documents).
@@ -56,42 +56,6 @@ Une démonstration de l'agent conversationnel est disponible via **Streamlit** (
 
 ---
 
-## Installation
-### Prérequis 
-- python >= `3.10`
-- une clé mistral API
-- Docker
-  
-### Clonez ce dépôt : 
-```bash
-git clone https://github.com/your-username/nom-du-repository.git
-```
-
-### Créer la clé Mistral
-```bash
-cd juriBot
-touch .env
-echo "MISTRAL_API_KEY=your-api-key-here" >> .env
-```
-
-### Installez les dépendances
-```bash
-pip install -r requirements.txt
-```
-
-### Uilisation Rapide avec docker-compose
-```bash
-docker-compose up --build -d
-```
-**Warning** : Avant de faire des requêtes sur les différents services, attendre qu'ils tournent tous.
-
-### Lancer StreamLit
-```bash
-streamlit run streamLitFront/app.py
-```
-
----
-
 ## Documentation et accès 
 - **encoderAPI** : [http://localhost:8000/docs](http://localhost:8000/docs)
 - **vectorSimilarityAPI** : [http://localhost:8001/docs](http://localhost:8001/docs)
@@ -102,6 +66,7 @@ streamlit run streamLitFront/app.py
 # Les données 
 
 ## LegiFrance
+- Voir [mchianale/RAG_droitFr](https://github.com/mchianale/RAG_droitFr) pour la récupération des données en `json`.
 - Environ `5000` articles du Code de l’éducation (voir  [Légifrance](https://www.legifrance.gouv.fr)).
 - Les textes des articles sont vectorisés.
 - Les métadonnées sont également conservées (section de l’article, partie législative ou réglementaire).
@@ -110,38 +75,9 @@ streamlit run streamLitFront/app.py
 - Par défaut, utilise la distance cosinus.
 - Réduit l’espace de recherche en utilisant l’ANN - les recherches approximatives de voisins les plus proches.
 
+## Modèle pour les embeddings
+- Choix du modèle `dangvantuan/french-document-embedding` : **305M** de paramètres voir [dangvantuan/french-document-embedding](https://huggingface.co/dangvantuan/french-document-embedding)
+- Le choix du modèle s'est fait grâce au benchmark proposé ici : [MTEB: Massive Text Embedding Benchmark](https://huggingface.co/spaces/mteb/leaderboard)
+
 ---
-
-# Kubernetes 
-## Build and Push Services Images vers DockerHub
-```bash
-bash buildAndPush.sh
-```
-**Warning** : changer le username, ici `mchianale`
-
-## Deploiement avec kubernetes
-```bash
-minikube delete # Remettre a niveau le cluster
-minikube start
-# encoderAPI
-kubectl apply -f kube/encoderAPI-service-deployment.yml
-# vectorSimilarityAPI
-kubectl apply -f kube/vectorSimilarityAPi-service-deployment.yml
-# juryBot
-kubectl apply -f kube/juriBot-service-deployment.yml
-```
-
-## Tourner en local avec kubernetes
-
-```bash
-Start-Process kubectl -ArgumentList 'port-forward', 'service/encoder-api', '8000:8000'
-Start-Process kubectl -ArgumentList 'port-forward', 'service/vector-similarity-api', '8001:8001'
-Start-Process kubectl -ArgumentList 'port-forward', 'service/juribot-api', '8002:8002'
-```
-**Warning** : bien verifieer que les status de chaque pods soient en `Running`:
-
-```bash
-kubectl get pods
-```
-
 
