@@ -79,7 +79,7 @@ Une démonstration de l'agent conversationnel est disponible via `Streamlit` (en
 
 ## Exemple 
 
-![GitHub Logo](https://github.com/mchianale/juribot/blob/main/img/screen_exemple.png)](https://github.com/mchianale/juribot/blob/main/img/juriBot_exemple_conversation.pdf)
+[![GitHub Logo](https://github.com/mchianale/juribot/blob/main/img/screen_exemple.png)](https://github.com/mchianale/juribot/blob/main/img/juriBot_exemple_conversation.pdf)
 
 [**voir une conversation**](https://github.com/mchianale/juribot/blob/main/img/juriBot_exemple_conversation.pdf)
 
