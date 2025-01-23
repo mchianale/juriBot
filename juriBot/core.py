@@ -53,7 +53,11 @@ class JuriBot:
                 tool_call = chat_response.choices[0].message.tool_calls[0]
                 function_name = tool_call.function.name
                 function_params = json.loads(tool_call.function.arguments)
-                function_result = self.names_to_functions[function_name](**function_params)
+                
+                function_params['n_results'] = 5
+                
+                #function_result = self.names_to_functions[function_name](**function_params)
+                function_result = globals()[function_name](**function_params)
               
                 # add to messages
                 messages.append({"role":"tool", "content": str(function_result), "tool_call_id": tool_call.id})   
