@@ -11,9 +11,6 @@ Ce projet vise à créer un **Agent RAG** (**Retrieval-Augmented Generation**) p
   <img src="https://img.shields.io/badge/-HuggingFace-FFAE42?style=for-the-badge&logo=huggingface&logoColor=white" alt="HuggingFace" />
 </p>
 
-<p align="center">
-![GitHub Logo](https://github.com/mchianale/juribot/blob/main/img/screen_exemple.png)](https://github.com/mchianale/juribot/blob/main/img/juriBot_exemple_conversation.pdf)
-</p>
 ---
 
 ## Sommaire
@@ -77,6 +74,14 @@ Une démonstration de l'agent conversationnel est disponible via `Streamlit` (en
 ## Réutilisation
 - Projet réutilisable avec `docker-compose` ou `kubernetes`.
 - **Voir [les instructions](https://github.com/mchianale/juribot/blob/main/RUN.md)**  
+
+---
+
+## Exemple 
+
+![GitHub Logo](https://github.com/mchianale/juribot/blob/main/img/screen_exemple.png)](https://github.com/mchianale/juribot/blob/main/img/juriBot_exemple_conversation.pdf)
+
+[**voir une conversation**](https://github.com/mchianale/juribot/blob/main/img/juriBot_exemple_conversation.pdf)
 
 ---
 
