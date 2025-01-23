@@ -5,7 +5,7 @@ Ce projet vise à créer un **Agent RAG** (Retrieval-Augmented Generation) pour 
 ## Powered by
 
 <p align="center">
-  <img src="https://img.shields.io/badge/-Mistral%20AI-blue?style=for-the-badge&logo=swift&logoColor=white" alt="Mistral AI" />
+  <img src="https://avatars.githubusercontent.com/u/132372032?s=200&v=4" />
   <img src="https://img.shields.io/badge/-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
   <img src="https://img.shields.io/badge/-ChromaDb-5E17EB?style=for-the-badge&logo=code&logoColor=white" alt="ChromaDb" />
   <img src="https://img.shields.io/badge/-HuggingFace-FFAE42?style=for-the-badge&logo=huggingface&logoColor=white" alt="HuggingFace" />
