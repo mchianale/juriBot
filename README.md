@@ -28,7 +28,7 @@ Ce projet vise à créer un **Agent RAG** (**Retrieval-Augmented Generation**) p
 ---
 
 ## Introduction
-![architecture](https://github.com/mchianale/juribot/blob/main/img/architecture.pdf)
+![architecture](https://github.com/mchianale/juribot/blob/main/img/architecture.png)
 
 **Le projet se compose de trois services principaux :**
 
