@@ -1,5 +1,6 @@
 import streamlit as st
 from juriBotClient import JuriBotClient
+import ast
 
 # app config
 juriBot = JuriBotClient(chat_url="http://localhost:8002/chat")
@@ -28,6 +29,13 @@ if prompt := st.chat_input():
         # write assistant
         #st.chat_message("tool").write(st.session_state.messages[-2]['content'])
         #st.error(response)
+        for message in response:
+            if message["role"] == "tool":
+                documents =  ast.literal_eval(message["content"])
+                for document in documents:
+                    content = ':'.join(document['document'].split(':')[-1:])
+                    st.chat_message('⚖️').write(f"**{document['metadata']['id']}**:\n{content}")
+                                                
         st.chat_message("assistant").write(st.session_state.messages[-1]['content'])
     else:
         st.error(response["error"], icon="🚨")
