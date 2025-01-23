@@ -13,6 +13,10 @@ Ce projet vise à créer un **Agent RAG** (**Retrieval-Augmented Generation**) p
 
 ---
 
+[![GitHub Logo](https://github.com/mchianale/loan_request_application/blob/main/docs/play.png)](https://youtu.be/JTdvEErmetI)
+
+---
+
 ## Sommaire
 
 - [Introduction](#introduction)
