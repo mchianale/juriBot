@@ -1,6 +1,6 @@
 # RAG pour le Droit Français - Code de l'Éducation
 
-Ce projet vise à créer un **Agent RAG** (Retrieval-Augmented Generation) pour le droit français, spécifiquement pour le **Code de l'Éducation**. L'objectif est de développer un agent conversationnel capable de répondre à des questions sur les articles en vigueur du Code de l'Éducation, en accédant directement aux textes officiels sur [Légifrance](https://www.legifrance.gouv.fr).
+Ce projet vise à créer un **Agent RAG** (**Retrieval-Augmented Generation**) pour le droit français, spécifiquement pour le **Code de l'Éducation**. L'objectif est de développer un agent conversationnel capable de répondre à des questions sur les articles en vigueur du Code de l'Éducation, en accédant directement aux textes officiels sur [Légifrance](https://www.legifrance.gouv.fr).
 
 ## Powered by
 
@@ -22,6 +22,8 @@ Ce projet vise à créer un **Agent RAG** (Retrieval-Augmented Generation) pour 
 - [Données](#les-données)
   - [LegiFrance](#legifrance)
   - [Chroma DB](#chroma-db---vector-database)
+- [Réutilisation](#réutilisation)
+- [Source](#source)
 
 ---
 
@@ -81,3 +83,16 @@ Une démonstration de l'agent conversationnel est disponible via **Streamlit** (
 
 ---
 
+## Réutilisation
+- Projet réutilisable avec `docker-compose` ou `kubernetes`.
+- **Voir [les instructions](https://github.com/mchianale/juribot/edit/main/RUN.md)**  
+
+---
+
+## Source
+
+- [**ChromaDB**](https://www.trychroma.com/)
+- [**LegiFrance**](https://www.legifrance.gouv.fr/)
+- [**mchianale/RAG_droitFr**](https://github.com/mchianale/RAG_droitFr)
+- [**MTEB: Massive Text Embedding Benchmark**](https://arxiv.org/pdf/2210.07316)
+- [**Mistral documentation**](https://docs.mistral.ai/)
