@@ -2,6 +2,8 @@
 
 Ce projet vise à créer un **Agent RAG** (**Retrieval-Augmented Generation**) pour le droit français, spécifiquement pour le **Code de l'Éducation**. L'objectif est de développer un agent conversationnel capable de répondre à des questions sur les articles en vigueur du Code de l'Éducation, en accédant directement aux textes officiels sur [Légifrance](https://www.legifrance.gouv.fr).
 
+[![GitHub Logo](https://github.com/mchianale/juribot/blob/main/img/screen_exemple.png)](https://github.com/mchianale/juribot/blob/main/img/juriBot_exemple_conversation.pdf)
+
 ## Powered by
 
 <p align="center">
@@ -24,10 +26,6 @@ Ce projet vise à créer un **Agent RAG** (**Retrieval-Augmented Generation**) p
   - [Chroma DB](#chroma-db---vector-database)
 - [Réutilisation](#réutilisation)
 - [Source](#source)
-  
----
-
-[![GitHub Logo](https://github.com/mchianale/juribot/blob/main/img/screen_exemple.png)](https://github.com/mchianale/juribot/blob/main/img/juriBot_exemple_conversation.pdf)
 
 ---
 
