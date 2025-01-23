@@ -98,7 +98,7 @@ Une démonstration de l'agent conversationnel est disponible via `Streamlit` (en
 **L’Agent**:
   - Ajout du mode stream.
   - Évaluation des réponses.
-  - 
+    
 ---
 
 ## Source
