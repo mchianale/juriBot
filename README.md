@@ -73,7 +73,7 @@ Une démonstration de l'agent conversationnel est disponible via `Streamlit` (en
 
 ## Réutilisation
 - Projet réutilisable avec `docker-compose` ou `kubernetes`.
-- **Voir [les instructions](https://github.com/mchianale/juribot/main/RUN.md)**  
+- **Voir [les instructions](https://github.com/mchianale/juribot/blob/main/RUN.md)**  
 
 ---
 
