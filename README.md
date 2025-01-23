@@ -33,20 +33,20 @@ Ce projet vise à créer un **Agent RAG** (**Retrieval-Augmented Generation**) p
 **Le projet se compose de trois services principaux :**
 
 1. **EncoderAPI** :
-   - Utilisation de **sentence-transformers** avec le modèle `dangvantuan/french-document-embedding` pour transformer les articles du Code de l'Éducation en embeddings, facilitant ainsi leur comparaison par similarité.
+   - Utilisation de `sentence-transformers` avec le modèle `dangvantuan/french-document-embedding` pour transformer les articles du Code de l'Éducation en embeddings, facilitant ainsi leur comparaison par similarité.
 
 2. **ChromaAPI** :
    - Gère la base de données vectorielle (ajout, modification, suppression de documents).
-   - Traite les requêtes pour obtenir les top_k voisins les plus proches.
+   - Traite les requêtes pour obtenir **les top_k voisins les plus proches**.
    - Fait appel à EncoderAPI pour obtenir les embeddings des textes.
 
 3. **JuriBot API** :
-   - Crée un agent (suivant la documentation de Mistral) utilisant un LLM pour répondre aux requêtes des utilisateurs, mais également pour gérer des outils.
+   - Crée un agent (suivant la documentation de `Mistral`) utilisant un LLM pour répondre aux requêtes des utilisateurs, mais également pour gérer des outils.
    - Utilise un System Prompt pour rendre les réponses du LLM plus pertinentes.
    - Ici, un seul outil est utilisé : il consiste à récupérer les top_k voisins les plus proches d’une requête utilisateur (que le LLM peut adapter).
    - Fournit un point d’API pour interagir avec JuriBot (gère également l’historique des messages).
 
-Une démonstration de l'agent conversationnel est disponible via **Streamlit** (en local), permettant aux utilisateurs de tester l'agent avec une interface.
+Une démonstration de l'agent conversationnel est disponible via `Streamlit` (en local), permettant aux utilisateurs de tester l'agent avec une interface.
     
 ---
 
