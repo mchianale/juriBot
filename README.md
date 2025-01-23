@@ -50,21 +50,6 @@ Une démonstration de l'agent conversationnel est disponible via `Streamlit` (en
     
 ---
 
-## Fonctionnalités
-
-- **Recherche de textes législatifs** : Interrogez le Code de l'Éducation pour obtenir les articles les plus pertinents en fonction des demandes.
-- **Précision et pertinence** : Grâce à l'intégration de **ChromaDB** et des embeddings, l'agent fournit des réponses précises basées sur la similarité des articles.
-- **Interface conviviale** : Testez facilement l'agent via **Streamlit** pour une expérience utilisateur fluide.
-
----
-
-## Documentation et accès 
-- **encoderAPI** : [http://localhost:8000/docs](http://localhost:8000/docs)
-- **vectorSimilarityAPI** : [http://localhost:8001/docs](http://localhost:8001/docs)
-- **juriBot** : [http://localhost:8002/docs](http://localhost:8002/docs)
-
----
-
 # Les données 
 
 ## LegiFrance
